@@ -90,7 +90,8 @@ class RestrictChanSuite:
     '''
     def get_restrictchan(clubs, name):
         for club in clubs:
-            if club.name == name:
+            print(club.name.lower(), name.lower())
+            if club.name.lower() == name.lower():
                 return club
         return None
     
@@ -122,7 +123,7 @@ class RestrictChanSuite:
     '''
     def is_cli(clubs, channel):
         for club in clubs:
-            if club.name.lower() + "-moderator_-command-line" == channel.name:
+            if club.name.lower() + "-moderator_-command-line" == channel.name.lower():
                 return club
         return False
 
@@ -236,11 +237,12 @@ class RestrictChanSuite:
                 await RestrictChanSuite.add_voice_channel(maybe_restrict_chan, content[len('!removevoicechannel '):])
             return True
         except:
-            print('could not find restrictchannelcommandline'); return False
+            print('could not find restrictchannelcommandline');
             
 
         try:
             command, chanName, name = content.split(' ')
+            chanName = 'R-' + chanName
         except:
             await message.channel.send('Invalid command: ' + message.content, delete_after = 5)
             return 

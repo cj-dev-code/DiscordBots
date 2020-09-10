@@ -214,7 +214,7 @@ async def on_message(message):
             await message.channel.send(send_text)
             return 
         elif content.startswith('!help'):
-            commands = ['!clublist\n\t\t - Lists all clubs in ' + message.channel.guild.name, '!joinclub Clubname\n\t\t - Joins the club Clubname', '!leaveclub\n\t\t - Leaves a server\'s club',
+            commands = ['!clublist\n\t\t - Lists all clubs in ' + message.channel.guild.name, '!describeclub Clubname\n\t\t - Gives a Clubname\'s self-provided description', '!joinclub Clubname\n\t\t - Joins the club Clubname', '!leaveclub\n\t\t - Leaves a server\'s club',
                         '!makeclub Clubname\n\t\t - Makes a club with the clubname Clubname','!admin\n\t\t - Opens a channel with you and admins', '!report person reason\n\t\t - Sends a report on a person to an admin or club convener.',
                         '!addtextchannel The-name-of-the-public-category The-new-channel\'s-name\n\t\t - Adds a new public text channel in a category', 
                         '!removetextchannel The-name-of-the-public-category The-new-channel\'s-name\n\t\t - Removes the public text channel YOU MADE from the category. Doesn\'t work for other people\'s channels',
