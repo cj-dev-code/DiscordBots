@@ -15,7 +15,7 @@ from PublicChannel import PubChanSuite, PublicChan
 from ClubChannel import ClubSuite, Club
 from restrictedchannel import RestrictChan, RestrictChanSuite
 from handles import User, ECMember, ECStudent, ECFaculty, Organizer, Convener, Admin, SuperAdmin
-
+import credentials
 
 
 def get_member_by_discord_name(guild, discord_name):
@@ -36,11 +36,11 @@ def is_auth(channel, auth_channel_name):
 auth_channel = 'auth'
 domain_dest = '@earlham.edu'
 send_account_email='earlhamhackerscontrol@gmail.com'
-account_password = 'Z1iCriDx$16yBjf1!2#8JH'
+
 
 student_role_name = 'ECStudent'
 faculty_role_name = 'ECFaculty'
-
+account_password = credentials.email_password
 clubs = []
 users = []
 
@@ -256,4 +256,4 @@ async def on_message(message):
 # In meet & greet lobbies, link to games, shows, 
 # and movies after 15 min of people talking.
 # We NEED to be able to host remote events. Convocation, Speaker events, and more
-client.run()
+client.run(credentials.bot_token)
